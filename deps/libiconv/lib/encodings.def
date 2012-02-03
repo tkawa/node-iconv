@@ -814,7 +814,6 @@ DEFENCODING(( "EUC-JP",                 /* IANA */
               "Extended_UNIX_Code_Packed_Format_for_Japanese", /* IANA */
               "csEUCPkdFmtJapanese",    /* IANA */
             /*"EUC_JP",                    JDK 1.1 */
-            /*"CP51932",                   Windows */
             ),
             euc_jp,
             { euc_jp_mbtowc, NULL },      { euc_jp_wctomb, NULL })
@@ -826,6 +825,22 @@ DEFALIAS(     "IBM-EUCJP",              /* AIX */
 DEFALIAS(     "SDECKANJI",              /* OSF/1 */
             euc_jp)
 #endif
+
+DEFENCODING(( "EUCJP-MS",               /* TOG/JVC */
+              "EUCJP-OPEN",             /* TOG/JVC */
+              "EUC-JP-MS",              /* glibc */
+              "EUCJP-WIN",              /* PHP */
+              "EUCJPMS",                /* MySQL */
+            ),
+            eucjp_ms,
+            { eucjp_ms_mbtowc, NULL },      { eucjp_ms_wctomb, NULL })
+
+DEFENCODING(( "CP51932",                /* Windows */
+              "WINDOWS-51932",          /* Windows */
+              "MS51932",
+            ),
+            cp51932,
+            { cp51932_mbtowc, NULL },       { cp51932_wctomb, NULL })
 
 DEFENCODING(( "SHIFT_JIS",              /* IANA */
               "SHIFT-JIS",              /* glibc */
@@ -841,6 +856,14 @@ DEFALIAS(     "PCK",                    /* Solaris */
 #endif
 
 DEFENCODING(( "CP932",                  /* glibc */
+              "WINDOWS-31J",            /* IANA */
+              "csWindows31J",           /* IANA */
+              "SJIS-OPEN",              /* TOG/VJC */
+              "SJIS-WIN",               /* PHP */
+              "WINDOWS-932",            /* Windows */
+              "MS932",                  /* Java */
+              "Shift_JIS-MS",
+              "SJIS-MS",
             ),
             cp932,
             { cp932_mbtowc, NULL },       { cp932_wctomb, NULL })
@@ -855,6 +878,12 @@ DEFENCODING(( "ISO-2022-JP",            /* IANA, RFC 1468 */
             ),
             iso2022_jp,
             { iso2022_jp_mbtowc, NULL },  { iso2022_jp_wctomb, iso2022_jp_reset })
+
+DEFENCODING(( "ISO-2022-JP-MS",
+            ),
+            iso2022_jpms,
+            { iso2022_jpms_mbtowc, NULL },  { iso2022_jpms_wctomb, iso2022_jpms_reset })
+
 
 DEFENCODING(( "ISO-2022-JP-1",          /* RFC 2237 */
             ),

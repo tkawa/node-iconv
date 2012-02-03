@@ -224,10 +224,13 @@ typedef struct {
 
 #include "euc_jp.h"
 #include "sjis.h"
-#include "cp932.h"
 #include "iso2022_jp.h"
 #include "iso2022_jp1.h"
 #include "iso2022_jp2.h"
+#include "cp932.h"
+#include "cp51932.h"
+#include "eucjp_ms.h"
+#include "iso2022_jpms.h"
 
 #include "euc_cn.h"
 #include "ces_gbk.h"
